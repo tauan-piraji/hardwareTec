@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch SoftwaretecApplication",
+            "request": "launch",
+            "mainClass": "softwaretec.src.main.java.com.tauanoliveira.softwaretec.SoftwaretecApplication",
+            "projectName": "softwareTec_1c77e100"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SoftwaretecApplication<cursoMC>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.tauanoliveira.softwaretec.SoftwaretecApplication",
+            "projectName": "cursoMC",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SoftwaretecApplication<softwareTec>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.tauanoliveira.softwaretec.SoftwaretecApplication",
+            "projectName": "softwareTec",
+            "args": ""
+        }
+    ]
+}

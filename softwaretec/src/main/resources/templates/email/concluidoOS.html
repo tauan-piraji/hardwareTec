@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <html lang="pt-BR">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Aprovação OS</title>
+        <style>
+            body{
+                margin-top: 50px;
+                background-color: aquamarine;
+            }
+            h2{
+                text-align: center;
+            }
+            p{
+                text-align: center;
+            }
+            h1{
+                text-align: center;
+            }
+            table{
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h2>Ordem de serviço concluida</h2>
+        <table>
+            <tr>
+                <th colspan="3">SOFTWARE-TEC</th>
+                <th>OS: <span th:text="${ordemServico.id}"></span></th>
+            </tr>
+            <tr>
+                <td colspan="3">Cliente: <span th:text="${ordemServico.cliente.name}"></span></td>
+                <td>DATA: <span th:text="${ordemServico.instante}"></td>
+            </tr>
+            <tr>
+                <td colspan="2">CEP: <span th:text="${ordemServico.cliente.endereco.cep}"></span></td>
+                <td colspan="2">Numero: <span th:text="${ordemServico.cliente.endereco.numero}"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2">Telefone: <span th:text="${ordemServico.cliente.contato}"></span></td>
+                <td colspan="2">E-mail: <span th:text="${ordemServico.cliente.email}"></span></td>
+            </tr>
+            <tr>
+                <td colspan="4">Status do pagamento: <span th:text="${ordemServico.pagamento.estadoPagamento}"></span></td>
+            </tr>
+            <tr>
+                <table th:each="item : ${ordemServico.itens}">
+                    <tr>
+                        <td colspan="2">Equipamento: <span th:text="${item.equipamento.nome}"></span></td>
+                        <td colspan="2">Valor: <span th:text="${item.preco}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Desconto: <span th:text="${item.desconto}">%</span></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" colspan="4">Avaria: <span th:text="${item.equipamento.descricao}"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Avaria: <span th:text="${item.equipamento.imgURI}"></span></td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+
+    </body>
+    </html>
